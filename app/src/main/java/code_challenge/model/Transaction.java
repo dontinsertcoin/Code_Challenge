@@ -23,6 +23,8 @@ public class Transaction implements Comparable<Transaction> {
         this.status = status;
     }
 
+    public Transaction() {}
+
     public String getReference() {
         return reference;
     }

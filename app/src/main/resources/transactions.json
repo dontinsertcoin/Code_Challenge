@@ -1,0 +1,38 @@
+[
+  {
+    "reference":"12345A",
+    "account_iban":"ES9820385778983000760236",
+    "date":"2019-07-16T16:55:42.000Z",
+    "amount":193.38,
+    "fee":3.18,
+    "description":"Restaurant payment 1",
+    "status": "SETTLED"
+  },
+  {
+    "reference":"12345B",
+    "account_iban":"ES9820385778983000760236",
+    "date":"2019-08-16T16:55:42.000Z",
+    "amount":200.0,
+    "fee":3.00,
+    "description":"Restaurant payment 2",
+    "status": "SETTLED"
+  },
+  {
+    "reference":"12345C",
+    "account_iban":"ES9820385778983000760236",
+    "date":"2019-09-16T16:55:42.000Z",
+    "amount":-190.38,
+    "fee":3.18,
+    "description":"Restaurant payment 3",
+    "status": "SETTLED"
+  },
+  {
+    "reference":"12345D",
+    "account_iban":"ES9820385778983000760236",
+    "date":"2019-10-16T16:55:42.000Z",
+    "amount":-100.00,
+    "fee":2.00,
+    "description":"Restaurant payment 4",
+    "status": "SETTLED"
+  }
+]
