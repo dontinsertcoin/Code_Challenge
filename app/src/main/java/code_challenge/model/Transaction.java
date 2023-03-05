@@ -1,6 +1,5 @@
 package code_challenge.model;
 
-import java.util.Comparator;
 import java.util.Date;
 
 public class Transaction implements Comparable<Transaction> {

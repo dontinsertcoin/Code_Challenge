@@ -2,7 +2,6 @@ package code_challenge.business.actions;
 
 import code_challenge.infra.database.Searcher;
 import code_challenge.model.Account;
-import code_challenge.model.Transaction;
 
 import java.io.FileNotFoundException;
 import java.util.Optional;

@@ -1,7 +1,6 @@
 package code_challenge.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Account {
@@ -14,7 +13,7 @@ public class Account {
         //We don't need to create new accounts this way, so this will only be used in tests
         this.iban = "ES123456789";
         this.balance= 0.0;
-        this.transactions = new ArrayList<Transaction>();
+        this.transactions = new ArrayList<>();
     }
 
     public Account(String iban, Double balance, List<Transaction> transactions){

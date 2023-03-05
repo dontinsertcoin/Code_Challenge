@@ -5,7 +5,6 @@ import code_challenge.model.Transaction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import javax.swing.text.html.Option;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;

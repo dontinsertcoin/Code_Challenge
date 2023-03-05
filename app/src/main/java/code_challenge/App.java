@@ -2,8 +2,6 @@ package code_challenge;
 
 import code_challenge.business.TransactionsManager;
 import code_challenge.business.actions.SearchAccount;
-import code_challenge.business.actions.SearchTransactionStatus;
-import code_challenge.business.actions.SearchTransactions;
 import code_challenge.infra.database.JsonFileSearcher;
 import code_challenge.infra.database.Searcher;
 import code_challenge.model.Account;

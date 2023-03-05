@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 public class SearchTransactions {
     //The account is mandatory
-
     public List<Transaction> searchFor(Account account) {
         //searchFor will sort the items chronologically, in the order they were added to the list
         return account.getTransactions();
