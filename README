@@ -1,0 +1,5 @@
+This project has been created as a code challenge.
+Its goal its to create a microservice using Java and some frameworks.
+
+In order to be able to receive and send data using REST API methods, we will use Spark (com.sparkjava:spark-core:2.9.4)
+In order to be able to manage json data and build Java objects, we will use Gson (com.google.code.gson:gson:2.7)
