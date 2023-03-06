@@ -3,3 +3,39 @@ Its goal its to create a microservice using Java and some frameworks.
 
 In order to be able to receive and send data using REST API methods, we will use Spark (com.sparkjava:spark-core:2.9.4)
 In order to be able to manage json data and build Java objects, we will use Gson (com.google.code.gson:gson:2.7)
+
+Por falta de tiempo, no ha sido posible finalizar el ejercicio y cabe destacar que quedan varias cosas pendientes:
+ - Sería necesario crear un serializador y deserializador (especialmente éste último) de JSON para poder
+    recoger correctamente las peticiones que se hagan a los endpoint correspondientes. Si estuviese implementado,
+    sería posible crear un Builder que permitiese la "opcionalidad" de algunos de los atributos de las llamadas al
+    endpoint.
+ - Un JSON no es una base de datos (como parece que refleja la estructura de archivos), pero era necesario tener
+    un archivo sobre el que realizar algunas pruebas y ha sido la solución más rápida, por no disponer del tiempo
+    para configurar una base de datos en condiciones en la que almacenar las cuentas y las transferencias
+    (por ejemplo, una relacional en la que una tabla intermedia asociaría las transferencias con las cuentas sobre
+    las que se ha realizado la operación), ni de utilizar un framework especifico para hacer más sencillo el mapeo
+    del ResultSet a objetos del modelo (p.e. hibernate).
+ - Al no disponer de una base de datos tampoco ha sido posible realizar los métodos de persistencia en la misma,
+    que seguirían la línea de los Searchers en cuanto a su estructura y uso.
+ - El archivo App.java no debería disponer del Searcher y tendría que ser responsabilidad del TransactionsManager.
+    Lo ideal sería que el createTransaction fuera capaz de encontrar la cuenta sobre la que se quiere realizar una
+    transferencia a partir del IBAN que refleja la misma, pero aun no se dispone de un método de almacenamiento y
+    búsqueda.
+ - Falta la totalidad del sistema de control de errores. Los métodos que devuelven objetos vacios o valores
+    "sin sentido" deberían lanzar excepciones especificas que serían recogidas y tratadas en los niveles pertinentes
+    (p.e. si una cuenta no existe, el sistema indica que la transacción ha sido inválida, pero debería lanzar una
+    excepción que especifique que esto se da porque no se ha encontrado la cuenta indicada).
+ - También sería necesario crear un sistema de salida de información que mostrase las transferencias o mensajes
+    pertienentes. Ahora mismo la información que se pueda recoger de las llamadas no se utiliza para nada.
+ - Ante el desconocimiento de un sistema eficaz para realizar ATDD (y la falta de tiempo para investigar),
+    se ha optado por utilizar TDD dejando patente en el nombre del test la funcionalidad que se desea testear.
+ - La imposibilidad de disponer de un servidor en el que lanzar la aplicación ha hecho que los endpoints no estén
+    pulidos (se ha utilizado para el desarrollo una versión gratuita de IntelliJ que no dispone de la posibilidad
+    de interactuar con servidores). De haber contado con tiempo para montar la app en un servidor, se habrían podido
+    realizar pruebas haciendo uso de herramientas como Postman.
+ - En las pruebas deberían existir dobles de prueba para simular el resultado de las llamadas y no depender de
+    "factores externos". Además de las pruebas unitarias, sería conveniente realizar pruebas de integración (como
+    mínimo) en las que comprobar que los componentes interactúan bien entre sí.
+    
+ En definitiva, soy consciente de que faltan muchas cosas, pero no he contado con los medios necesarios para poder 
+ realizarlas. Espero que podáis entenderlo y que esto al menos sirva para haceros una idea.
